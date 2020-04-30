@@ -1,0 +1,22 @@
+<body>  
+<h1>Editing Book</h1>
+<div class="edit-form">
+  <%= form_for @book do |f| %>
+
+  <div>
+  </div>
+  <div>
+  </div>
+  <div>
+  <p>Title</p>
+  <%= f.text_field :title, class "form-text-field" %>
+  <p>Body</p>
+  <%= f.text_area :body, class "form-text-area"%>
+  <%= f.submit class "form-submit" %>
+  </div>
+  <% end %>
+</div>
+<a href="/books/#{@book.id}">Show</a>
+<span> | </span>
+<a href="/books">Back</a>
+</body>
