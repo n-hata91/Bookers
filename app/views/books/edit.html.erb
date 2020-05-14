@@ -1,22 +1,32 @@
 <body>  
-<h1>Editing Book</h1>
-<div class="edit-form">
-  <%= form_for @book do |f| %>
-
-  <div>
-  </div>
-  <div>
-  </div>
-  <div>
-  <p>Title</p>
-  <%= f.text_field :title, class "form-text-field" %>
-  <p>Body</p>
-  <%= f.text_area :body, class "form-text-area"%>
-  <%= f.submit class "form-submit" %>
+  <h1>Editing Book</h1>
+  <%= form_with scope: :book, url: book_path, local:true, method: :patch do |f| %>
+    <% if @book.errors.any? %>
+      <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %>
+      prohibited
+        this article from being saved:</h2>
+      <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
   </div>
   <% end %>
-</div>
-<a href="/books/#{@book.id}">Show</a>
-<span> | </span>
-<a href="/books">Back</a>
+  
+  <div class="field">
+    <%= f.label :title, "title" %>
+    <%= f.text_field :title, class: "form-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :body, "body" %>
+    <%= f.text_area :body, class: "form-text-area"%>
+  </div>
+  <div class="actions">
+  <%= f.submit "Update Book" %>
+  </div>
+  <% end %>
+  <%= link_to "Show", "/books/#{@book.id}" %>
+  <span> | </span>
+  <%= link_to "Back", "/books" %>
 </body>

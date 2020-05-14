@@ -1,22 +1,16 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 .clearfix ::after{
   content: "";
   display: block;
   clear: both;
 }
 
-/* top */
 body {
   margin: 33px;
+  line-height: 18px;
 }
 
 h1 {
-  margin: 17px 0;
+
 }
 
 h2 {
@@ -27,33 +21,60 @@ p {
   margin: 33px;
 }
 
-/* .top-text {
+a {
+  color: #000;
+}
+
+a:visited {
+  color: #666;
+}
+
+th {
+  padding-bottom: 5px;
+}
+
+td {
+  padding: 0 5px 7px 5px;
+}
+
+label {
+  display: block;
+}
+
+ul {
   margin: 33px;
-} */
-
-/* index */
-/* 酔っ払い */
-/* 標準ですでに設定されていてここで書くと二度手間になるものもある？ */
-h5 {
-  padding: 1px 1px 5px 1px;
 }
 
-.index-table-header {
-  padding: 1px 1px 5px 1px;
+.field, .actions {
+  margin-bottom: 10px;
 }
 
-.index-table-data {
-  padding: 1px 5px 7px 5px;
+
+
+#notice {
+  color: green;
 }
 
-.form-text-field {
-  padding: 1px;
+#error_explanation {
+  width: 450px;
+  padding: 7px 7px 0 7px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  border: 2px solid red;
 }
 
-.form-text-area {
+#error_explanation h2 {
+padding: 5px 5px 5px 15px;
+margin: -7px -7px 0 -7px;
+background-color: #c00;
+color: #fff;
+font-size: 12px;
+text-align: left;
+font-weight: bold;
+}
+
+.field_with_errors {
   padding: 2px;
-}
-
-.form-submit {
-  padding: 2px 8px 3px 8px;
+  background-color: red;
+  display: table;
 }

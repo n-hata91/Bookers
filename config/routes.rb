@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get '/' => 'books#top'
+  root 'books#top' , as: "root"
   resources :books
 end
